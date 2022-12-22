@@ -6,6 +6,8 @@ public class Main {
         task1();
         task2();
         task3();
+        task4();
+        task5();
     }
     /**Создайте массив из 15 случайных целых чисел из отрезка [0;99].
      * Выведите массив на экран.
@@ -86,5 +88,41 @@ public class Main {
             System.out.println("среднее арифметическое в двух массивах равны");
         }
     }
-
+/**Создайте массив из 4 случайных целых чисел из отрезка [10;99], выведите его на экран в строку.
+ * Определить и вывести на экран сообщение о том, является ли массив строго возрастающей последовательностью.
+ */
+    public static int[] generateRandomArray4() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[4];
+        for (int i = 0; i < arr.length; i++) {
+        arr[i] = random.nextInt(90) + 10;
+         }
+         return arr;
+    }
+    public static void task4() {
+        System.out.println("Задача 4");
+        int[] arr = generateRandomArray4();
+        int b = 0;
+        System.out.println(Arrays.toString(arr));
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] < arr[i+1]) {
+                b++;
+            }
+        }
+        if (b == 3) {
+            System.out.println("Массив является строго возрастающей последовательностью");
+        } else {
+            System.out.println("Массив не является строго возрастающей последовательностью");
+        }
+    }
+    public static void task5() {
+        System.out.println("Задача 5");
+        int[] arr = new int[20];
+        arr[0] = 0;
+        arr[1] = 1;
+        for (int i = 2; i < arr.length; i++) {
+            arr[i] = arr[i - 1] + arr[i - 2];
+        }
+        System.out.println(Arrays.toString(arr));
+    }
 }
