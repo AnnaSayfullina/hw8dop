@@ -8,6 +8,7 @@ public class Main {
         task3();
         task4();
         task5();
+        task6();
     }
     /**Создайте массив из 15 случайных целых чисел из отрезка [0;99].
      * Выведите массив на экран.
@@ -125,4 +126,61 @@ public class Main {
         }
         System.out.println(Arrays.toString(arr));
     }
+
+    /**Определите закономерность данных ниже последовательностей чисел
+     1, 4, 9, 16, 25...
+     1, -4, 9, -16, 25...
+     1, -1, 1, -1, 1, -1...
+     1, 0, 2, 0, 3, 0, 4...
+      */
+    public static void task6() {
+        System.out.println("Задача 6");
+        int[] arr1 = new int[10];
+        int number1 = 1;
+        int a = 1;
+        for (int i = 0; i < arr1.length; i++) {
+                arr1[i] = number1;
+                a += 2;
+                number1 += a;
+            if (i%2 != 0) {
+                arr1[i] = -arr1[i];
+            }
+        }
+
+        System.out.println(Arrays.toString(arr1));
+        int[] arr2 = new int[10];
+        int number2 = 1;
+        int a2 = 1;
+        for (int i = 0; i < arr2.length; i++) {
+            arr2[i] = number2;
+            a2 +=2;
+            number2 +=a2;
+        }
+        System.out.println(Arrays.toString(arr2));
+
+        int[] arr3 = new int[10];
+        for (int i = 0; i < arr3.length; i++) {
+            arr3[i]= 1;
+            if (i%2!=0) {
+                arr3[i] = - arr3[i];
+            }
+        }
+        System.out.println(Arrays.toString(arr3));
+
+        int[] arr4 = new int[10];
+        arr4[0] = 1;
+        for (int i = 1; i < arr4.length; i++) {
+            if (i%2 == 0) {
+                arr4[i] = arr4[i-2] + 1;
+            } else {
+                arr4[i] = 0;
+            }
+        }
+        System.out.println(Arrays.toString(arr4));
+
+
+
+
+    }
+
 }
