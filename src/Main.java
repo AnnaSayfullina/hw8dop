@@ -9,7 +9,13 @@ public class Main {
         task4();
         task5();
         task6();
-    }
+        task11();
+        task12();
+        task13();
+        task14();
+        task15();
+
+            }
     /**Создайте массив из 15 случайных целых чисел из отрезка [0;99].
      * Выведите массив на экран.
      * Подсчитайте сколько в массиве чётных элементов и выведете это количество на экран на отдельной строке.
@@ -93,12 +99,12 @@ public class Main {
  * Определить и вывести на экран сообщение о том, является ли массив строго возрастающей последовательностью.
  */
     public static int[] generateRandomArray4() {
-        java.util.Random random = new java.util.Random();
+        Random random = new Random();
         int[] arr = new int[4];
         for (int i = 0; i < arr.length; i++) {
         arr[i] = random.nextInt(90) + 10;
          }
-         return arr;
+        return arr;
     }
     public static void task4() {
         System.out.println("Задача 4");
@@ -177,10 +183,131 @@ public class Main {
             }
         }
         System.out.println(Arrays.toString(arr4));
-
-
-
-
     }
-
+    public static int[] random1(){
+        Random random = new Random();
+        int[] arr = new int[12];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(31) - 15;
+        }
+        return arr;
+    }
+    public static void task11() {
+        System.out.println("Задача 2.1");
+        int[] arr = random1();
+        int max = -16;
+        int b = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+                b = i;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.println(max);
+        System.out.println(b);
+    }
+    public static int[] random2(){
+        Random random = new Random();
+        int[] arr = new int[11];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(2) ;
+        }
+        return arr;
+    }
+    public static void task12() {
+        System.out.println("Задача 2.2");
+        int[] nums = random2();
+        int a = 0;
+        int b = 0;
+        System.out.println(Arrays.toString(nums));
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] ==0) {
+                a++;
+            } else {
+                b++;
+            }
+        }
+        if (a>b) {
+            System.out.println("Больше встречается элемент 0");
+        } else if (b > a ){
+            System.out.println("Больше встречается элемент 1");
+        } else  {
+            System.out.println("-1");
+        }
+    }
+    public static int[][] random3() {
+        Random random3 = new Random();
+        int[][] arr1 = new int[8][5];
+        for (int i = 0; i < arr1.length; i++) {
+            for (int j = 0; j < arr1[i].length; j++) {
+                arr1[i][j] = random3.nextInt( 90) + 10;
+            }
+        }
+        return arr1;
+    }
+    public static void task13() {
+        System.out.println("Задача 2.3");
+        int[][] anna = random3();
+        for (int i = 0; i < anna.length; i++) {
+            for (int j = 0; j < anna[i].length; j++) {
+                System.out.print(anna[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+    public static int[][] random4() {
+        Random random4 = new Random();
+        int[][] array = new int[5][8];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                array[i][j] = random4.nextInt(199) - 99;
+            }
+        }
+        return array;
+    }
+    public static void task14() {
+        System.out.println("Задача 2.4");
+        int[][] anna4 = random4();
+        int max = -100;
+        for (int i = 0; i < anna4.length; i++) {
+            for (int j = 0; j < anna4[i].length; j++) {
+                System.out.print(anna4[i][j] + "\t");
+            if (anna4[i][j] > max) {
+                max = anna4[i][j];
+            }
+            }
+            System.out.println();
+        }
+          System.out.println(max + " максимально число");
+    }
+    public static int[][] generateRandomArray25() {
+        Random random25 = new Random();
+        int[][] arr25 = new int[7][4];
+        for (int i = 0; i < arr25.length; i++) {
+            for (int j = 0; j < arr25[i].length; j++){
+                arr25[i][j] = random25.nextInt(11)-5;
+            }
+        }
+        return arr25;
+    }
+    public static void task15() {
+        int[][] anna25 = generateRandomArray25();
+        int max = -1000;
+        int index = 0;
+        for (int i = 0; i < anna25.length; i++) {
+            int p = 1;
+            for (int j = 0; j < anna25[i].length; j++) {
+                System.out.print(anna25[i][j] + "\t");
+                    p = p * anna25[i][j];
+            }
+            System.out.println();
+            System.out.println(p);
+            if (p > max) {
+                max = p;
+                index = i;
+            }
+        }
+        System.out.println("Наибольшее произведение " + max + " в строке " + index);
+    }
 }
