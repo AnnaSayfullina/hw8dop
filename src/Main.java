@@ -3,17 +3,18 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        task1();
-        task2();
-        task3();
-        task4();
-        task5();
-        task6();
-        task11();
-        task12();
-        task13();
-        task14();
-        task15();
+//        task1();
+//        task2();
+//        task3();
+//        task4();
+//        task5();
+//        task6();
+//        task11();
+//        task12();
+//        task13();
+//        task14();
+//        task15();
+        task16();
 
             }
     /**Создайте массив из 15 случайных целых чисел из отрезка [0;99].
@@ -309,5 +310,46 @@ public class Main {
             }
         }
         System.out.println("Наибольшее произведение " + max + " в строке " + index);
+    }
+    public static int[][] generateRandomArray26() {
+        Random random26 = new Random();
+        int[][] arr26 = new int[6][7];
+        for (int i = 0; i < arr26.length; i++) {
+            for (int j = 0; j < arr26[i].length; j++){
+                arr26[i][j] = random26.nextInt(10);
+            }
+        }
+        return arr26;
+    }
+    public static void task16() {
+        int[][] anna26 = generateRandomArray26();
+        for (int i = 0; i < anna26.length; i++) {
+            for (int j = 0; j < anna26[i].length; j++) {
+                System.out.print(anna26[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        System.out.println("После преобразования");
+        for (int i = 0; i < anna26.length; i++) {
+            int max = anna26[i][0];
+            int maxI = 0;
+            for (int j = 0; j < anna26[i].length; j++) {
+                if (anna26[i][j] > max) {
+                    max = anna26[i][j];
+                    maxI = j;
+                }
+                if (maxI > 0) {
+                    int a = anna26[i][0];
+                    anna26[i][0] = max;
+                    anna26[i][maxI] = a;
+                }
+            }
+        }
+            for (int i = 0; i < anna26.length; i++) {
+                for (int j = 0; j < anna26[i].length; j++) {
+                    System.out.print(anna26[i][j] + "\t");
+                }
+                System.out.println();
+            }
     }
 }
